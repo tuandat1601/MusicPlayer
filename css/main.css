@@ -1,0 +1,145 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0; }
+
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; }
+
+body {
+  background: linear-gradient(5deg, #036564, #033649);
+  display: grid; }
+
+.player {
+  position: relative;
+  min-width: 480px;
+  margin: 0 auto; }
+  .player .icon-pause {
+    display: none; }
+  .player .dashboard {
+    padding: 16px 16px 14px;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #ebebeb;
+    width: 100%;
+    max-width: 480px;
+    z-index: 10;
+    background: linear-gradient(90deg, #EECDA3, #EF629F); }
+    .player .dashboard header {
+      text-align: center;
+      margin-bottom: 10px; }
+      .player .dashboard header h4 {
+        color: #ec1f55;
+        font-size: 12px; }
+      .player .dashboard header h2 {
+        color: .player .dashboard header h2 #333;
+        font-size: 20px; }
+    .player .dashboard .cd {
+      display: flex;
+      width: 200px;
+      margin: auto; }
+      .player .dashboard .cd-thumb {
+        width: 100%;
+        border-radius: 50%;
+        padding-top: 100%;
+        background-color: #333;
+        background-size: cover;
+        margin: auto; }
+    .player .dashboard .control {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 20px 0 10px 0; }
+      .player .dashboard .control .btn {
+        color: #666;
+        font-size: 18px;
+        padding: 20px; }
+      .player .dashboard .control .btn.active {
+        color: #ec1f55; }
+      .player .dashboard .control .btn-toggle-play {
+        display: flex;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: #ec1f55;
+        color: #fff;
+        font-size: 24px;
+        align-items: center;
+        justify-content: center; }
+    .player .dashboard .myProgress {
+      position: relative;
+      width: 100%;
+      background-color: #d3d3d3;
+      opacity: 0.7;
+      display: flex; }
+      .player .dashboard .myProgress .myBar {
+        position: relative;
+        width: 0px;
+        height: 8px;
+        background-color: #ec1f55; }
+      .player .dashboard .myProgress .myBar::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 99%;
+        width: 10px;
+        opacity: 0;
+        height: 10px;
+        transform: translateY(-50%);
+        background-color: #ec1f55;
+        transition: 0.05s ease; }
+    .player .dashboard .myProgress:hover .myBar::after {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.5);
+      border-radius: 50%; }
+    .player .dashboard .myProgress:hover .myBar {
+      height: 10px; }
+  .player .playlist {
+    width: 100%;
+    position: relative;
+    margin-top: 440px;
+    padding: 12px 0; }
+    .player .playlist .song {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      width: 100%;
+      background-color: #fff;
+      padding: 8px 16px;
+      border-radius: 5px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); }
+    .player .playlist .song.active {
+      background-color: #ec1f55; }
+    .player .playlist .during-time {
+      margin: 5px 0; }
+    .player .playlist .song:active {
+      opacity: 0.8; }
+    .player .playlist .song.active .option,
+    .player .playlist .song.active .author,
+    .player .playlist .song.active .title {
+      color: #fff; }
+    .player .playlist .song .thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-size: cover;
+      margin: 0 8px; }
+    .player .playlist .song .body {
+      flex: 1;
+      padding: 0 16px; }
+    .player .playlist .song .title {
+      font-size: 18px;
+      color: #333; }
+    .player .playlist .song .author {
+      font-size: 12px;
+      color: #999; }
+    .player .playlist .song .option {
+      padding: 16px 8px;
+      color: #999;
+      font-size: 18px; }
+
+.player.playing .icon-pause {
+  display: inline-block; }
+
+.player.playing .icon-play {
+  display: none; }

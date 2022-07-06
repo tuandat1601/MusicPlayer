@@ -1,0 +1,189 @@
+$primary-color:#ec1f55;
+$text-color: #333;
+*, *::before, *::after{
+	margin: 0;
+	padding: 0;
+}
+html{
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+body {
+   background: linear-gradient(5deg, #036564, #033649);
+display: grid ;
+
+}
+.player{
+	position: relative;
+	min-width: 480px;
+	margin: 0 auto;
+	.icon-pause {
+  display: none;
+}
+	.dashboard{
+		padding: 16px 16px 14px;
+		position: fixed;
+		top:0;
+		border-bottom: 1px solid #ebebeb;
+		width: 100%;
+
+		max-width: 480px;
+		z-index: 10;
+	background:linear-gradient(90deg,#EECDA3,#EF629F);
+		header{
+		text-align: center;
+  		margin-bottom: 10px;
+		  h4{
+			  color:$primary-color;
+			  font-size: 12px;
+		  }
+		  h2{
+			  color:&$text-color;
+			  font-size: 20px;
+		  }
+		}
+		.cd{
+			display: flex;
+			width: 200px;
+			margin: auto;
+			&-thumb{
+				width: 100%;
+				border-radius: 50%;
+				padding-top: 100%;
+				background-color: #333;
+				background-size: cover;
+				margin: auto;
+			}
+		}
+		.control{
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			padding: 20px 0 10px 0;
+			.btn{
+				color:#666;
+				font-size: 18px;
+				padding: 20px;
+			}
+			.btn.active{
+				color:$primary-color;
+			}
+			.btn-toggle-play{
+				display: flex;
+				width: 64px;
+				height: 64px;
+				border-radius: 50%;
+				background-color: $primary-color;
+				color:#fff;
+				font-size: 24px;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		.myProgress{
+			position: relative;
+			width: 100%;
+			background-color: #d3d3d3;
+			opacity: 0.7;
+			display: flex;
+			.myBar{
+				position: relative;
+				width: 0px;
+				height: 8px;
+				background-color: $primary-color;
+
+			}
+			.myBar::after{
+				position: absolute;
+				content: "";
+				top:50%;
+				left: 99%;
+				width: 10px;
+				opacity: 0;
+				height: 10px;
+				transform: translateY(-50%);
+				background-color: $primary-color;
+				transition: 0.05s ease;
+
+			}
+
+		}
+		.myProgress:hover .myBar::after{
+			opacity: 1;
+			transform:translateY(-50%) scale(1.5);
+			border-radius: 50%;
+		}
+		.myProgress:hover .myBar{
+			height: 10px;
+		}
+	}
+	.playlist {
+		width: 100%;
+		position: relative;
+  		margin-top: 440px;
+  		padding: 12px 0 ;
+
+.song {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.song.active {
+  background-color: $primary-color;
+}
+.during-time{
+	margin: 5px 0;
+
+}
+.song:active {
+  opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+  color: #fff;
+}
+
+.song .thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+
+.song .body {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.song .title {
+  font-size: 18px;
+  color:$text-color;
+}
+
+.song .author {
+  font-size: 12px;
+  color: #999;
+}
+
+.song .option {
+  padding: 16px 8px;
+  color: #999;
+  font-size: 18px;
+}
+	}
+}
+.player.playing .icon-pause{
+	display: inline-block;
+}
+.player.playing .icon-play{
+	display: none;
+}

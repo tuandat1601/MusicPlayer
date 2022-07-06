@@ -1,0 +1,13 @@
+{
+  "name": "music_player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node-sass -o css sass/main.scss -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
